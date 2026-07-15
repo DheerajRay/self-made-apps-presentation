@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A presentation about four self-made applications and the system used to build them." />
+  <title>Four Apps. One Product System.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#opening" aria-label="Back to opening">
+      <span class="brand-mark">DR</span>
+      <span>Self-made systems</span>
+    </a>
+    <div class="topbar-center" aria-live="polite">
+      <span id="sectionIndex">01</span>
+      <span class="topbar-rule"></span>
+      <span id="sectionName">Opening</span>
+    </div>
+    <div class="topbar-actions">
+      <button class="text-button" id="notesToggle" type="button" aria-pressed="false">Speaker notes</button>
+      <button class="icon-button" id="fullscreenButton" type="button" aria-label="Enter fullscreen">↗</button>
+    </div>
+  </header>
+
+  <main id="presentation">
+    <section class="slide hero" id="opening" data-title="Opening" data-notes="Open with the constraint, not the tools. These products began with narrow, personal problems. The professional story is the repeatable way those problems became working software.">
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <div class="slide-inner hero-grid">
+        <div class="eyebrow reveal">Independent product engineering · 2026</div>
+        <h1 class="hero-title reveal">Four apps.<br><span>One product system.</span></h1>
+        <p class="hero-lede reveal">How specific personal use cases became resilient, low-cost applications—using AI where it creates leverage and deterministic software where it earns trust.</p>
+        <div class="hero-foot reveal">
+          <div class="hero-proof"><strong>4</strong><span>working products</span></div>
+          <div class="hero-proof"><strong>1</strong><span>repeatable method</span></div>
+          <div class="hero-proof"><strong>∞</strong><span>small problems worth solving</span></div>
+        </div>
+      </div>
+      <button class="scroll-cue" type="button" data-goto="portfolio">Explore the work <span>↓</span></button>
+    </section>
+
+    <section class="slide" id="premise" data-title="The premise" data-notes="The point is not that anyone can generate an app. The point is that one builder can now own the full loop: problem framing, architecture, implementation, quality, release and learning.">
+      <div class="slide-inner split-statement">
+        <div>
+          <div class="eyebrow reveal">01 · The premise</div>
+          <h2 class="statement reveal">The new leverage is not “AI builds apps.”</h2>
+        </div>
+        <div class="statement-answer reveal">
+          <p>It is the ability to hold the entire product loop:</p>
+          <ol>
+            <li><span>01</span>Observe a precise friction</li>
+            <li><span>02</span>Choose the smallest useful architecture</li>
+            <li><span>03</span>Build with reusable skills and agents</li>
+            <li><span>04</span>Verify behavior, not just appearance</li>
+            <li><span>05</span>Ship, measure, refine, document</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide portfolio-slide" id="portfolio" data-title="The portfolio" data-notes="Click through the four products. Each solves a different class of problem and makes a different decision about where AI belongs. Use the Open app control later when verified Vercel URLs are configured in script.js.">
+      <div class="slide-inner wide">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">02 · The work</div>
+            <h2>Four use cases, four kinds of intelligence.</h2>
+          </div>
+          <p>Select a product to open its story.</p>
+        </div>
+
+        <div class="project-accordion reveal" id="projectAccordion" aria-label="Project showcase">
+          <article class="project-panel duel is-active" data-project="duel">
+            <button class="project-tab" type="button" aria-expanded="true">
+              <span class="project-number">01</span>
+              <span class="project-vertical">Duel Engine</span>
+            </button>
+            <div class="project-content">
+              <div class="project-copy">
+                <div class="project-kicker">Rules engine · PWA · Local-first play</div>
+                <h3>Duel Engine</h3>
+                <p>A browser-based card duel simulator that turns a complex ruleset into a deterministic, installable game—with cloud sync and AI introduced only around the core.</p>
+                <div class="project-meta">
+                  <span>React 19</span><span>Reducer engine</span><span>Supabase</span><span>Vitest</span>
+                </div>
+                <div class="project-insight"><span>The design choice</span><strong>Keep every duel local, fast and explainable.</strong></div>
+                <div class="project-links">
+                  <a href="https://github.com/DheerajRay/duel-engine" target="_blank" rel="noreferrer">GitHub ↗</a>
+                  <button class="open-demo" type="button" data-demo="duel">Open app ↗</button>
+                </div>
+              </div>
+              <div class="browser-frame" aria-label="Stylized Duel Engine preview">
+                <div class="browser-bar"><i></i><i></i><i></i><span>duel-engine / competition</span></div>
+                <div class="mock duel-mock">
+                  <div class="duel-lp"><span>OPPONENT</span><b>8000 LP</b></div>
+                  <div class="card-row opponent"><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="duel-center"><span>DRAW</span><span>MAIN 1</span><span>BATTLE</span><span>END</span></div>
+                  <div class="card-row player"><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="duel-lp player-lp"><span>PLAYER</span><b>8000 LP</b></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-panel fresh" data-project="fresh">
+            <button class="project-tab" type="button" aria-expanded="false">
+              <span class="project-number">02</span>
+              <span class="project-vertical">FreshKeeper</span>
+            </button>
+            <div class="project-content">
+              <div class="project-copy">
+                <div class="project-kicker">Household utility · Multimodal AI · Graceful fallback</div>
+                <h3>FreshKeeper</h3>
+                <p>A smart-fridge guide that connects inventory, food storage, meal discovery and shopping—using OpenAI to resolve the ambiguity between a household item and the next useful action.</p>
+                <div class="project-meta"><span>OpenAI Responses</span><span>Vision</span><span>Supabase</span><span>Vercel API</span></div>
+                <div class="project-insight"><span>The design choice</span><strong>AI handles uncertainty; manual workflows always remain.</strong></div>
+                <div class="project-links">
+                  <a href="https://github.com/DheerajRay/fresh-keeper" target="_blank" rel="noreferrer">GitHub ↗</a>
+                  <button class="open-demo" type="button" data-demo="fresh">Open app ↗</button>
+                </div>
+              </div>
+              <div class="browser-frame" aria-label="Stylized FreshKeeper preview">
+                <div class="browser-bar"><i></i><i></i><i></i><span>freshkeeper / my fridge</span></div>
+                <div class="mock fresh-mock">
+                  <div class="fresh-nav"><b>FRESHKEEPER</b><span>FRIDGE</span><span>MEALS</span><span>SHOP</span></div>
+                  <div class="fresh-stats"><div><b>18</b><small>ITEMS</small></div><div><b>03</b><small>EAT SOON</small></div><div><b>07</b><small>MEALS</small></div></div>
+                  <div class="fresh-list"><p><i></i><span>Spinach<small>Crisper · 2 days</small></span><b>EAT SOON</b></p><p><i></i><span>Greek yogurt<small>Upper shelf · 8 days</small></span><b>FRESH</b></p><p><i></i><span>Tomatoes<small>Counter · 4 days</small></span><b>FRESH</b></p></div>
+                  <button type="button" aria-label="Decorative add item button">＋ ADD ITEM</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-panel flow" data-project="flow">
+            <button class="project-tab" type="button" aria-expanded="false">
+              <span class="project-number">03</span>
+              <span class="project-vertical">FlowWays</span>
+            </button>
+            <div class="project-content">
+              <div class="project-copy">
+                <div class="project-kicker">Task memory · Hybrid classification · Full-stack</div>
+                <h3>FlowWays</h3>
+                <p>A capture-first task memory that turns free-form thought into a checklist, workflow, journal entry or timeline—then lets the user keep working in the structure that fits.</p>
+                <div class="project-meta"><span>Next.js</span><span>OpenAI</span><span>Zod</span><span>Postgres + RLS</span></div>
+                <div class="project-insight"><span>The design choice</span><strong>Model judgment, deterministic guardrails, user ownership.</strong></div>
+                <div class="project-links">
+                  <a href="https://github.com/DheerajRay/Flowways" target="_blank" rel="noreferrer">GitHub ↗</a>
+                  <button class="open-demo" type="button" data-demo="flow">Open app ↗</button>
+                </div>
+              </div>
+              <div class="browser-frame" aria-label="Stylized FlowWays preview">
+                <div class="browser-bar"><i></i><i></i><i></i><span>flowways / memory feed</span></div>
+                <div class="mock flow-mock">
+                  <div class="capture"><span>What needs your attention?</span><b>＋</b></div>
+                  <div class="flow-card"><small>WORKFLOW · #launch</small><strong>Prepare product presentation</strong><p>Backlog <span></span> In progress <span></span> Review</p></div>
+                  <div class="flow-card overdue"><small>TIMELINE · OVERDUE</small><strong>Verify production deployments</strong><p>Due 15 Jul <em>12 min</em></p></div>
+                  <div class="flow-card compact"><small>CHECKLIST · #demo</small><strong>Presentation readiness</strong><p>✓ Story &nbsp; ○ Screens &nbsp; ○ Live apps</p></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-panel note" data-project="note">
+            <button class="project-tab" type="button" aria-expanded="false">
+              <span class="project-number">04</span>
+              <span class="project-vertical">NoteMaker</span>
+            </button>
+            <div class="project-content">
+              <div class="project-copy">
+                <div class="project-kicker">Creative tool · Web Audio · State precision</div>
+                <h3>NoteMaker</h3>
+                <p>A local-first browser sampler and 16-step sequencer that translates a hardware-style operating model into an original, portable web instrument.</p>
+                <div class="project-meta"><span>Tone.js</span><span>Zustand</span><span>PWA</span><span>Playwright</span></div>
+                <div class="project-insight"><span>The design choice</span><strong>No AI at runtime—precision and immediacy matter more.</strong></div>
+                <div class="project-links">
+                  <a href="https://github.com/DheerajRay/NoteMaker" target="_blank" rel="noreferrer">GitHub ↗</a>
+                  <button class="open-demo" type="button" data-demo="note">Open app ↗</button>
+                </div>
+              </div>
+              <div class="browser-frame" aria-label="Stylized NoteMaker preview">
+                <div class="browser-bar"><i></i><i></i><i></i><span>notemaker / pattern 01</span></div>
+                <div class="mock note-mock">
+                  <div class="lcd"><small>PTN 01</small><strong>120.0</strong><span>16 STEP</span></div>
+                  <div class="knobs"><i></i><i></i><i></i><i></i></div>
+                  <div class="sequencer" aria-hidden="true"></div>
+                  <div class="note-actions"><span>REC</span><span>PLAY</span><span>WRITE</span><span>FX</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="architecture" data-title="The architecture" data-notes="This is the repeatable architecture. The product changes, but the layers remain recognizable. The important pattern is to keep every layer replaceable and to preserve a non-AI path where failure would otherwise block the user.">
+      <div class="slide-inner">
+        <div class="section-heading reveal">
+          <div><div class="eyebrow">03 · The product system</div><h2>One architecture. Different weights.</h2></div>
+          <p>The use case decides which layer becomes sophisticated.</p>
+        </div>
+        <div class="architecture-grid reveal">
+          <div class="architecture-spine">
+            <div><span>01</span><strong>Experience</strong><small>React interfaces, mobile shells, motion, PWA</small></div>
+            <div><span>02</span><strong>Domain logic</strong><small>Rules, timers, inventory, sequencing, fallbacks</small></div>
+            <div><span>03</span><strong>AI boundary</strong><small>Server-side prompts, structured output, validation</small></div>
+            <div><span>04</span><strong>Data</strong><small>Local-first cache, Supabase, Postgres, RLS</small></div>
+            <div><span>05</span><strong>Delivery</strong><small>Tests, Git, changelog, Vercel, rollback</small></div>
+          </div>
+          <div class="architecture-weights">
+            <div class="weight-row"><b>Duel Engine</b><span style="--w:82%">Rules engine</span><span style="--w:28%">AI edge</span></div>
+            <div class="weight-row"><b>FreshKeeper</b><span style="--w:64%">Utility core</span><span style="--w:86%">AI edge</span></div>
+            <div class="weight-row"><b>FlowWays</b><span style="--w:72%">Guardrails</span><span style="--w:72%">AI edge</span></div>
+            <div class="weight-row"><b>NoteMaker</b><span style="--w:92%">Realtime core</span><span style="--w:3%">No runtime AI</span></div>
+            <p>Illustrative emphasis—not a code metric.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="ai" data-title="AI with intent" data-notes="This is the practical OpenAI story. The API never belongs in the browser. Responses are asked for in constrained shapes and validated. A deterministic fallback protects the key workflow. Cost is controlled by using the model for moments of ambiguity, not for every interaction.">
+      <div class="slide-inner">
+        <div class="eyebrow reveal">04 · AI with intent</div>
+        <h2 class="large-question reveal">Where does AI earn its place?</h2>
+        <div class="ai-spectrum reveal">
+          <div class="spectrum-line"><span></span><span></span><span></span><span></span></div>
+          <article><em>01</em><b>Never</b><p>Audio timing, duel resolution, persistence rules.</p><small>Deterministic core</small></article>
+          <article><em>02</em><b>Assist</b><p>Deck suggestions, tags, shopping routes.</p><small>User reviews</small></article>
+          <article><em>03</em><b>Interpret</b><p>Free-form capture, shelf-life context, food images.</p><small>Schema validated</small></article>
+          <article><em>04</em><b>Generate</b><p>Meal ideas, storage answers, creative options.</p><small>Failure tolerant</small></article>
+        </div>
+        <div class="ai-principles reveal">
+          <span>Server-side keys</span><span>Structured outputs</span><span>Fallback logic</span><span>Usage boundaries</span><span>Human override</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="workflow" data-title="The build loop" data-notes="The accelerant is a controlled loop. Skills encode repeatable expertise. Plugins operate browsers, run smoke tests, inspect deployments and manage platforms. Tests and changelogs turn fast iteration into durable progress.">
+      <div class="slide-inner wide">
+        <div class="section-heading reveal">
+          <div><div class="eyebrow">05 · The build loop</div><h2>Speed comes from reducing re-decisions.</h2></div>
+          <p>A reusable operating system for one-person product teams.</p>
+        </div>
+        <div class="loop reveal">
+          <div class="loop-center"><strong>Specific<br>use case</strong><span>the anchor</span></div>
+          <div class="loop-step s1"><i>01</i><b>Frame</b><span>PRD · constraints</span></div>
+          <div class="loop-step s2"><i>02</i><b>Compose</b><span>skills · architecture</span></div>
+          <div class="loop-step s3"><i>03</i><b>Build</b><span>agents · code</span></div>
+          <div class="loop-step s4"><i>04</i><b>Verify</b><span>unit · browser · smoke</span></div>
+          <div class="loop-step s5"><i>05</i><b>Release</b><span>Git · Vercel · Supabase</span></div>
+          <div class="loop-step s6"><i>06</i><b>Learn</b><span>usage · changelog</span></div>
+          <svg viewBox="0 0 600 600" aria-hidden="true"><circle cx="300" cy="300" r="218"></circle><path d="M295 81l14 9-14 9"></path></svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="evidence" data-title="Evidence of craft" data-notes="Professionalism shows up in the boring but essential layers. Point to concrete evidence: semantic releases, automated tests, row-level security, server-side API routes, documented architecture, fallback modes and production deployment workflows.">
+      <div class="slide-inner">
+        <div class="eyebrow reveal">06 · Evidence of craft</div>
+        <h2 class="reveal">Prototype energy.<br>Production discipline.</h2>
+        <div class="evidence-grid reveal">
+          <article><span>01</span><b>Versioned change</b><p>Semantic releases and human-readable changelogs turn experiments into auditable decisions.</p></article>
+          <article><span>02</span><b>Automated confidence</b><p>Vitest, Testing Library, Playwright and scripted smoke flows verify logic and experience.</p></article>
+          <article><span>03</span><b>Secure boundaries</b><p>Server-side OpenAI calls, environment isolation, Supabase Auth and row-level security.</p></article>
+          <article><span>04</span><b>Operational resilience</b><p>Local-first behavior, graceful AI fallback, preview deployments and rollback paths.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide economics" id="economics" data-title="Lean economics" data-notes="Low cost is an architectural outcome. Static-first and local-first designs reduce infrastructure. Serverless compute scales from zero. AI is called only for high-value ambiguity. Managed platforms remove maintenance work that does not differentiate the product.">
+      <div class="slide-inner split-statement">
+        <div>
+          <div class="eyebrow reveal">07 · Lean economics</div>
+          <h2 class="statement reveal">Low tether.<br>Low ceremony.<br>Low idle cost.</h2>
+        </div>
+        <div class="economics-list reveal">
+          <div><span>STATIC FIRST</span><strong>Ship the interface to the edge.</strong><small>Minimal always-on infrastructure.</small></div>
+          <div><span>SERVERLESS</span><strong>Compute only when a request needs it.</strong><small>Vercel API routes for bounded AI work.</small></div>
+          <div><span>MANAGED DATA</span><strong>Buy reliability, not maintenance.</strong><small>Supabase for auth, Postgres and policies.</small></div>
+          <div><span>SELECTIVE AI</span><strong>Spend tokens on ambiguity.</strong><small>Cache, constrain, validate and fall back.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide closing" id="closing" data-title="Closing" data-notes="Close on agency. These are not four finished answers. They are evidence that the distance between a personal frustration and a maintainable tool has collapsed—if product judgment stays in the loop.">
+      <div class="slide-inner closing-inner">
+        <div class="eyebrow reveal">08 · The takeaway</div>
+        <h2 class="reveal">The distance from<br><span>“I wish this existed”</span><br>to “I use this” is collapsing.</h2>
+        <p class="reveal">The opportunity is not to build more software.<br>It is to build more specific software—responsibly.</p>
+        <div class="closing-links reveal">
+          <a href="#portfolio">Revisit the apps ↑</a>
+          <a href="https://github.com/DheerajRay" target="_blank" rel="noreferrer">github.com/DheerajRay ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="speaker-notes" id="speakerNotes" aria-hidden="true">
+    <div><span>Speaker note</span><button type="button" id="notesClose" aria-label="Close speaker notes">×</button></div>
+    <p id="notesText"></p>
+  </aside>
+
+  <nav class="slide-nav" aria-label="Presentation navigation">
+    <button type="button" id="previousSlide" aria-label="Previous section">←</button>
+    <div id="slideDots"></div>
+    <button type="button" id="nextSlide" aria-label="Next section">→</button>
+  </nav>
+
+  <dialog id="demoDialog" class="demo-dialog">
+    <div class="demo-dialog-bar">
+      <div><i></i><i></i><i></i><span id="demoTitle">App preview</span></div>
+      <button type="button" id="demoClose" aria-label="Close app preview">×</button>
+    </div>
+    <div class="demo-placeholder" id="demoPlaceholder">
+      <span>LIVE APP SLOT</span>
+      <h3>Ready for the verified deployment.</h3>
+      <p>Add the production URL in <code>script.js</code> after the revival check. The presentation will load it here in a browser frame.</p>
+    </div>
+    <iframe id="demoFrame" title="Live project preview" loading="lazy"></iframe>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
