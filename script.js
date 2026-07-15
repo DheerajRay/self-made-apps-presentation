@@ -105,11 +105,23 @@ const demoDialog = document.getElementById('demoDialog');
 const demoFrame = document.getElementById('demoFrame');
 const demoPlaceholder = document.getElementById('demoPlaceholder');
 const demoTitle = document.getElementById('demoTitle');
+const demoViewportToggle = document.getElementById('demoViewportToggle');
+const demoViewportLabel = document.getElementById('demoViewportLabel');
+
+function setDemoViewport(mode) {
+  const isMobile = mode === 'mobile';
+  demoDialog.classList.toggle('is-mobile', isMobile);
+  demoViewportToggle.setAttribute('aria-pressed', String(isMobile));
+  demoViewportToggle.setAttribute('aria-label', `Switch app preview to ${isMobile ? 'desktop' : 'mobile'} view`);
+  demoViewportLabel.textContent = isMobile ? 'Desktop view' : 'Mobile view';
+  demoViewportToggle.querySelector('.viewport-toggle-icon').textContent = isMobile ? '▭' : '▯';
+}
 
 document.querySelectorAll('.open-demo').forEach((button) => {
   button.addEventListener('click', () => {
     const project = projects[button.dataset.demo];
     demoTitle.textContent = project.title;
+    setDemoViewport('desktop');
     if (project.url) {
       demoFrame.src = project.url;
       demoFrame.style.display = 'block';
@@ -129,6 +141,9 @@ function closeDemo() {
 }
 
 document.getElementById('demoClose').addEventListener('click', closeDemo);
+demoViewportToggle.addEventListener('click', () => {
+  setDemoViewport(demoDialog.classList.contains('is-mobile') ? 'desktop' : 'mobile');
+});
 demoDialog.addEventListener('click', (event) => {
   if (event.target === demoDialog) closeDemo();
 });

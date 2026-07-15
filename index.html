@@ -315,12 +315,18 @@
       <div><i></i><i></i><i></i><span id="demoTitle">App preview</span></div>
       <button type="button" id="demoClose" aria-label="Close app preview">×</button>
     </div>
-    <div class="demo-placeholder" id="demoPlaceholder">
-      <span>LIVE APP SLOT</span>
-      <h3>Ready for the verified deployment.</h3>
-      <p>Add the production URL in <code>script.js</code> after the revival check. The presentation will load it here in a browser frame.</p>
+    <div class="demo-stage" id="demoStage">
+      <div class="demo-placeholder" id="demoPlaceholder">
+        <span>LIVE APP SLOT</span>
+        <h3>Ready for the verified deployment.</h3>
+        <p>Add the production URL in <code>script.js</code> after the revival check. The presentation will load it here in a browser frame.</p>
+      </div>
+      <iframe id="demoFrame" title="Live project preview" loading="lazy"></iframe>
     </div>
-    <iframe id="demoFrame" title="Live project preview" loading="lazy"></iframe>
+    <button class="viewport-toggle" id="demoViewportToggle" type="button" aria-pressed="false" aria-label="Switch app preview to mobile view">
+      <span class="viewport-toggle-icon" aria-hidden="true">▯</span>
+      <span id="demoViewportLabel">Mobile view</span>
+    </button>
   </dialog>
 
   <script src="script.js"></script>
