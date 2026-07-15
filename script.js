@@ -36,6 +36,7 @@ function setActiveSlide(index) {
 }
 
 function goToSlide(index) {
+  if (document.getElementById('demoDialog')?.open) return;
   const target = Math.max(0, Math.min(index, slides.length - 1));
   slides[target].scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -56,6 +57,7 @@ setActiveSlide(0);
 document.getElementById('previousSlide').addEventListener('click', () => goToSlide(activeSlide - 1));
 document.getElementById('nextSlide').addEventListener('click', () => goToSlide(activeSlide + 1));
 document.querySelectorAll('[data-goto]').forEach((button) => button.addEventListener('click', () => {
+  if (document.getElementById('demoDialog')?.open) return;
   document.getElementById(button.dataset.goto)?.scrollIntoView({ behavior: 'smooth' });
 }));
 
@@ -109,10 +111,25 @@ const demoStage = document.getElementById('demoStage');
 const demoViewport = document.getElementById('demoViewport');
 const demoViewportToggle = document.getElementById('demoViewportToggle');
 const demoViewportLabel = document.getElementById('demoViewportLabel');
+let presentationScrollPosition = 0;
 const demoViewports = {
   desktop: { width: 1440, height: 900 },
   mobile: { width: 390, height: 844 }
 };
+
+function lockPresentation() {
+  presentationScrollPosition = window.scrollY;
+  document.documentElement.classList.add('demo-open');
+  document.body.classList.add('demo-open');
+  document.body.style.top = `-${presentationScrollPosition}px`;
+}
+
+function unlockPresentation() {
+  document.documentElement.classList.remove('demo-open');
+  document.body.classList.remove('demo-open');
+  document.body.style.removeProperty('top');
+  window.scrollTo({ top: presentationScrollPosition, left: 0, behavior: 'instant' });
+}
 
 function updateDemoViewportSize() {
   const mode = demoDialog.classList.contains('is-mobile') ? 'mobile' : 'desktop';
@@ -157,13 +174,13 @@ document.querySelectorAll('.open-demo').forEach((button) => {
       demoFrame.style.display = 'none';
       demoPlaceholder.style.display = 'grid';
     }
+    lockPresentation();
     demoDialog.showModal();
   });
 });
 
 function closeDemo() {
   demoDialog.close();
-  demoFrame.removeAttribute('src');
 }
 
 document.getElementById('demoClose').addEventListener('click', closeDemo);
@@ -171,6 +188,10 @@ demoViewportToggle.addEventListener('click', () => {
   setDemoViewport(demoDialog.classList.contains('is-mobile') ? 'desktop' : 'mobile');
 });
 new ResizeObserver(updateDemoViewportSize).observe(demoStage);
+demoDialog.addEventListener('close', () => {
+  demoFrame.removeAttribute('src');
+  unlockPresentation();
+});
 demoDialog.addEventListener('click', (event) => {
   if (event.target === demoDialog) closeDemo();
 });

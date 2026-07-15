@@ -164,6 +164,9 @@ h2 { margin-bottom: 0; max-width: 880px; font-size: clamp(42px, 6.3vw, 92px); li
 .viewport-toggle-icon { font-size: 15px; line-height: 1; }
 .demo-dialog.is-mobile .demo-stage { background: radial-gradient(circle at 50% 35%,#272a24,#090a08 67%); }
 .demo-dialog.is-mobile .demo-viewport { border-radius: 26px; outline: 6px solid #242620; box-shadow: 0 24px 60px rgba(0,0,0,.52); }
+html.demo-open, body.demo-open { overflow: hidden; overscroll-behavior: none; }
+body.demo-open { position: fixed; left: 0; right: 0; width: 100%; }
+.demo-dialog, .demo-stage { overscroll-behavior: contain; }
 
 @media (max-width: 600px) {
   .demo-dialog { width: 100vw; height: 100dvh; border: 0; }
