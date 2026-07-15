@@ -105,8 +105,33 @@ const demoDialog = document.getElementById('demoDialog');
 const demoFrame = document.getElementById('demoFrame');
 const demoPlaceholder = document.getElementById('demoPlaceholder');
 const demoTitle = document.getElementById('demoTitle');
+const demoStage = document.getElementById('demoStage');
+const demoViewport = document.getElementById('demoViewport');
 const demoViewportToggle = document.getElementById('demoViewportToggle');
 const demoViewportLabel = document.getElementById('demoViewportLabel');
+const demoViewports = {
+  desktop: { width: 1440, height: 900 },
+  mobile: { width: 390, height: 844 }
+};
+
+function updateDemoViewportSize() {
+  const mode = demoDialog.classList.contains('is-mobile') ? 'mobile' : 'desktop';
+  const viewport = demoViewports[mode];
+  const gutter = 28;
+  const scale = Math.min(
+    1,
+    (demoStage.clientWidth - gutter) / viewport.width,
+    (demoStage.clientHeight - gutter) / viewport.height
+  );
+  const safeScale = Math.max(scale, 0.1);
+
+  demoViewport.style.width = `${Math.round(viewport.width * safeScale)}px`;
+  demoViewport.style.height = `${Math.round(viewport.height * safeScale)}px`;
+  demoFrame.style.width = `${viewport.width}px`;
+  demoFrame.style.height = `${viewport.height}px`;
+  demoFrame.style.transform = `scale(${safeScale})`;
+  demoFrame.style.display = demoFrame.hasAttribute('src') ? 'block' : 'none';
+}
 
 function setDemoViewport(mode) {
   const isMobile = mode === 'mobile';
@@ -115,6 +140,7 @@ function setDemoViewport(mode) {
   demoViewportToggle.setAttribute('aria-label', `Switch app preview to ${isMobile ? 'desktop' : 'mobile'} view`);
   demoViewportLabel.textContent = isMobile ? 'Desktop view' : 'Mobile view';
   demoViewportToggle.querySelector('.viewport-toggle-icon').textContent = isMobile ? '▭' : '▯';
+  requestAnimationFrame(updateDemoViewportSize);
 }
 
 document.querySelectorAll('.open-demo').forEach((button) => {
@@ -144,6 +170,7 @@ document.getElementById('demoClose').addEventListener('click', closeDemo);
 demoViewportToggle.addEventListener('click', () => {
   setDemoViewport(demoDialog.classList.contains('is-mobile') ? 'desktop' : 'mobile');
 });
+new ResizeObserver(updateDemoViewportSize).observe(demoStage);
 demoDialog.addEventListener('click', (event) => {
   if (event.target === demoDialog) closeDemo();
 });
