@@ -1,8 +1,8 @@
 const projects = {
-  duel: { title: 'Duel Engine', url: '' },
-  fresh: { title: 'FreshKeeper', url: '' },
-  flow: { title: 'FlowWays', url: '' },
-  note: { title: 'NoteMaker', url: '' },
+  duel: { title: 'Duel Engine', url: 'https://duel-engine.vercel.app' },
+  fresh: { title: 'FreshKeeper', url: 'https://fresh-keeper-orcin.vercel.app' },
+  flow: { title: 'FlowWays', url: 'https://flowways.vercel.app' },
+  note: { title: 'NoteMaker', url: 'https://note-maker-ten-bice.vercel.app' },
 };
 
 const slides = [...document.querySelectorAll('.slide')];
