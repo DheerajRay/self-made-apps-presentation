@@ -1,7 +1,11 @@
 const projects = {
   duel: { title: 'Duel Engine', url: 'https://duel-engine.vercel.app' },
   fresh: { title: 'FreshKeeper', url: 'https://fresh-keeper-orcin.vercel.app' },
-  flow: { title: 'FlowWays', url: 'https://flowways.vercel.app' },
+  flow: {
+    title: 'FlowWays',
+    url: 'https://flowways.vercel.app',
+    viewports: { desktop: { width: 1840, height: 900 } }
+  },
   note: { title: 'NoteMaker', url: 'https://note-maker-ten-bice.vercel.app' },
 };
 
@@ -112,6 +116,7 @@ const demoViewport = document.getElementById('demoViewport');
 const demoViewportToggle = document.getElementById('demoViewportToggle');
 const demoViewportLabel = document.getElementById('demoViewportLabel');
 let presentationScrollPosition = 0;
+let activeDemoProject = null;
 const demoViewports = {
   desktop: { width: 1440, height: 900 },
   mobile: { width: 390, height: 844 }
@@ -133,7 +138,7 @@ function unlockPresentation() {
 
 function updateDemoViewportSize() {
   const mode = demoDialog.classList.contains('is-mobile') ? 'mobile' : 'desktop';
-  const viewport = demoViewports[mode];
+  const viewport = activeDemoProject?.viewports?.[mode] || demoViewports[mode];
   const gutter = 28;
   const scale = Math.min(
     1,
@@ -163,6 +168,7 @@ function setDemoViewport(mode) {
 document.querySelectorAll('.open-demo').forEach((button) => {
   button.addEventListener('click', () => {
     const project = projects[button.dataset.demo];
+    activeDemoProject = project;
     demoTitle.textContent = project.title;
     setDemoViewport('desktop');
     if (project.url) {
@@ -190,6 +196,7 @@ demoViewportToggle.addEventListener('click', () => {
 new ResizeObserver(updateDemoViewportSize).observe(demoStage);
 demoDialog.addEventListener('close', () => {
   demoFrame.removeAttribute('src');
+  activeDemoProject = null;
   unlockPresentation();
 });
 demoDialog.addEventListener('click', (event) => {
