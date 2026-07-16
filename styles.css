@@ -176,3 +176,56 @@ body.demo-open { position: fixed; left: 0; right: 0; width: 100%; }
   .viewport-toggle { min-width: 108px; padding: 0 8px; }
   .demo-dialog.is-mobile .demo-viewport { border-radius: 20px; outline-width: 3px; }
 }
+/* Narrative system v3 */
+.decision-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 42px; align-items: stretch; }
+.decision-map { border-top: 1px solid var(--ink); }
+.decision-axis { height: 38px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; color: var(--muted); font: 400 8px var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+.decision-axis i { height: 1px; background: linear-gradient(90deg,var(--ink),var(--acid)); position: relative; }
+.decision-axis i::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-radius: 50%; background: var(--acid); border: 1px solid var(--ink); }
+.decision-row { min-height: 66px; display: grid; grid-template-columns: 1fr 116px 1fr; align-items: center; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+.decision-row > span { font-size: 15px; font-weight: 600; }.decision-row b { justify-self: start; padding: 6px 8px; background: var(--ink); color: var(--paper); font: 400 8px var(--mono); text-transform: uppercase; }.decision-row.is-assisted b { background: var(--acid); color: var(--ink); }.decision-row small { color: var(--muted); font: 400 9px var(--mono); }
+.ai-contract { min-height: 340px; display: flex; flex-direction: column; padding: 28px; background: var(--ink); color: var(--paper); }
+.contract-label { color: var(--acid); font: 400 9px var(--mono); letter-spacing: .12em; }
+.contract-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; align-items: start; margin: 62px 0 40px; }.contract-flow > i { align-self: center; color: var(--acid); font-style: normal; }.contract-flow > div { border-top: 1px solid rgba(242,240,233,.28); padding-top: 12px; }.contract-flow span,.contract-flow strong,.contract-flow small { display: block; }.contract-flow span { color: var(--acid); font: 400 8px var(--mono); }.contract-flow strong { margin: 10px 0 6px; font-size: 13px; }.contract-flow small { color: rgba(242,240,233,.58); font-size: 9px; line-height: 1.45; }
+.ai-contract > p { max-width: 540px; margin: auto 0 0; color: rgba(242,240,233,.72); font-size: 14px; line-height: 1.55; }
+
+.system-slide { background: var(--paper-2) !important; }
+.system-map { display: grid; grid-template-columns: 1.18fr .72fr .96fr .72fr 1fr; align-items: stretch; min-height: 270px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.system-zone { padding: 24px; display: flex; flex-direction: column; justify-content: center; background: var(--ink); color: var(--paper); }.system-zone .zone-label { margin-bottom: auto; color: var(--acid); font: 400 8px var(--mono); letter-spacing: .12em; }.system-zone strong { margin-top: 22px; font-size: 17px; }.system-zone small { margin-top: 5px; color: rgba(242,240,233,.58); font: 400 8px/1.45 var(--mono); }
+.boundary-zone { background: var(--blue); color: var(--ink); }.boundary-zone .zone-label,.boundary-zone small { color: rgba(16,17,15,.62); }
+.system-route { display: grid; place-content: center; text-align: center; padding: 14px; }.system-route b { font: 500 8px var(--mono); }.system-route span { margin-top: 8px; color: var(--muted); font: 400 8px/1.4 var(--mono); }.system-route i { margin-top: 18px; color: var(--muted); font-style: normal; }
+.system-services { display: grid; grid-template-rows: 1fr 1fr; }.system-services > div { display: flex; flex-direction: column; justify-content: center; padding: 18px; border-bottom: 1px solid var(--line); background: var(--paper); }.system-services > div:last-child { border-bottom: 0; }.system-services span { color: var(--muted); font: 400 8px var(--mono); }.system-services strong { margin: 8px 0 4px; font-size: 14px; }.system-services small { color: var(--muted); font: 400 8px var(--mono); }
+.system-principles { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 26px; border-top: 1px solid var(--line); }.system-principles span { padding: 14px 0; color: var(--muted); font: 400 9px var(--mono); text-align: center; border-right: 1px solid var(--line); }.system-principles span:last-child { border-right: 0; }
+
+.process-timeline { display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.process-timeline article { min-height: 326px; padding: 20px; display: flex; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; }.process-timeline article::before { content: ""; position: absolute; left: 19px; top: -5px; width: 9px; height: 9px; border-radius: 50%; background: var(--ink); }.process-timeline article:last-child::before { background: var(--acid); border: 1px solid var(--ink); }
+.timeline-top { display: flex; justify-content: space-between; color: var(--muted); font: 400 8px var(--mono); }.process-timeline b { margin-top: 76px; font-size: 22px; line-height: 1.1; }.process-timeline p { margin: 16px 0 24px; color: var(--muted); font-size: 12px; line-height: 1.55; }.process-timeline article > strong { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); font: 500 8px var(--mono); }
+
+.economics-ledger { display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid rgba(16,17,15,.32); border-left: 1px solid rgba(16,17,15,.32); }.economics-ledger article { min-height: 245px; padding: 22px; display: flex; flex-direction: column; border-right: 1px solid rgba(16,17,15,.32); border-bottom: 1px solid rgba(16,17,15,.32); }.economics-ledger span { font: 500 8px var(--mono); letter-spacing: .08em; }.economics-ledger b { margin-top: 58px; font-size: 19px; line-height: 1.15; }.economics-ledger p { margin: 13px 0 20px; color: rgba(16,17,15,.68); font-size: 11px; line-height: 1.5; }.economics-ledger small { margin-top: auto; font: 400 8px var(--mono); }
+.economics-equation { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr 1.15fr; align-items: center; gap: 13px; margin-top: 26px; font: 400 9px var(--mono); text-transform: uppercase; }.economics-equation span { padding-top: 11px; border-top: 1px solid rgba(16,17,15,.35); }.economics-equation i { font-style: normal; }.economics-equation b { padding: 13px; background: var(--ink); color: var(--acid); text-align: center; }
+
+.constraints-slide { background: #f0b293 !important; }
+.constraint-table { border-top: 1px solid rgba(16,17,15,.35); border-left: 1px solid rgba(16,17,15,.35); }.constraint-head,.constraint-row { display: grid; grid-template-columns: .9fr 1.1fr; }.constraint-head span { padding: 9px 18px; border-right: 1px solid rgba(16,17,15,.35); font: 500 8px var(--mono); }.constraint-row > div { min-height: 80px; padding: 15px 18px; border-right: 1px solid rgba(16,17,15,.35); border-bottom: 1px solid rgba(16,17,15,.35); }.constraint-row b,.constraint-row strong { font-size: 14px; }.constraint-row p { margin: 6px 0 0; color: rgba(16,17,15,.66); font-size: 10px; line-height: 1.45; }.constraint-row > div:last-child { background: rgba(242,240,233,.24); }
+
+.roadmap-slide { background: var(--paper-2) !important; }
+.roadmap-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; align-items: end; }.roadmap-grid article { min-height: 270px; padding: 22px; display: flex; flex-direction: column; border-top: 4px solid var(--ink); background: var(--paper); }.roadmap-grid article:nth-child(2) { min-height: 290px; border-color: var(--blue); }.roadmap-grid article:nth-child(3) { min-height: 310px; border-color: var(--acid); background: var(--ink); color: var(--paper); }.roadmap-grid span { font: 500 8px var(--mono); letter-spacing: .12em; }.roadmap-grid b { margin-top: 44px; font-size: 24px; }.roadmap-grid ul { margin: 20px 0 28px; padding: 0; list-style: none; }.roadmap-grid li { padding: 8px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }.roadmap-grid article:nth-child(3) li { color: rgba(242,240,233,.65); border-color: rgba(242,240,233,.18); }.roadmap-grid small { margin-top: auto; color: var(--muted); font: 400 9px/1.45 var(--mono); }.roadmap-grid article:nth-child(3) small { color: var(--acid); }
+.roadmap-outcome { display: flex; justify-content: center; align-items: center; gap: 18px; margin-top: 20px; font: 400 9px var(--mono); }.roadmap-outcome i { color: var(--muted); font-style: normal; }.roadmap-outcome b { padding: 8px 10px; background: var(--acid); }
+
+@media (max-width: 960px) {
+  .decision-layout { grid-template-columns: 1fr; }.ai-contract { min-height: 280px; }.contract-flow { margin: 34px 0 28px; }
+  .system-map { grid-template-columns: 1fr; }.system-route { min-height: 86px; }.system-route i { margin-top: 8px; transform: rotate(90deg); }.system-services { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }.system-principles { grid-template-columns: repeat(2,1fr); }
+  .process-timeline,.economics-ledger { grid-template-columns: repeat(2,1fr); }.process-timeline article { min-height: 270px; }.process-timeline b { margin-top: 44px; }
+  .economics-equation { grid-template-columns: 1fr auto 1fr; }.economics-equation b { grid-column: 1/-1; }
+  .roadmap-grid { grid-template-columns: 1fr; align-items: stretch; }.roadmap-grid article,.roadmap-grid article:nth-child(2),.roadmap-grid article:nth-child(3) { min-height: 0; }.roadmap-grid b { margin-top: 22px; }
+}
+
+@media (max-width: 600px) {
+  .decision-row { grid-template-columns: 1fr auto; }.decision-row small { grid-column: 1/-1; }.contract-flow { grid-template-columns: 1fr; }.contract-flow > i { transform: rotate(90deg); }
+  .system-principles,.process-timeline,.economics-ledger { grid-template-columns: 1fr; }
+  .constraint-head { display: none; }.constraint-row { grid-template-columns: 1fr; }
+  .roadmap-outcome { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+.constraints-slide .section-heading { margin-bottom: 34px; }
+.closing-inner h2 { font-size: clamp(46px,6.7vw,92px); }
+.closing-inner > p { margin-top: 28px; }
+.closing-links { margin-top: 38px; }

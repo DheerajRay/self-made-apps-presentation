@@ -1,293 +1,276 @@
-# Every App Improved the Next
+# Specific Software. Deliberate AI.
 
-## How building applications became a repeatable system of skills, tests, plugins, and better AI decisions
+## Speaker notes for a 10–15 minute presentation
 
-This version is designed for a 10-15 minute discussion. The notes intentionally emphasize the story and the ideas you can expand. Delivery mechanics, detailed timing, and presentation posture have been reduced.
+## Central argument
 
-## The central narrative
+These applications began as solutions to specific personal problems. They are useful examples of a broader product discipline: deciding where AI improves an experience, where deterministic software must remain in control, and how the whole application can stay affordable and manageable after the initial build.
 
-The applications are not four separate portfolio pieces. They are four versions of the same learning system.
+The presentation has three connected stories:
 
-Each application introduced a different kind of difficulty. While solving that difficulty, the building process gained a new capability: a changelog, a testing habit, a mobile-first rule, a PWA pattern, a smoke-test workflow, a plugin, a persona, or a reusable skill. That capability then became part of the starting point for the next application.
+1. Each product began with a different use context and therefore needed a different kind of intelligence.
+2. AI was attached only where ambiguity, interpretation, or useful variation was part of the user problem.
+3. The building and operating system became progressively stronger, while remaining low-tether and relatively inexpensive.
 
-The result was compounding speed. The later applications could begin with decisions that the earlier applications had already paid to discover.
+The phrase **“Where does AI earn its place?”** is still the central question, but it is no longer the answer to every slide. It is the product-decision framework that connects the applications to their architecture.
 
-The phrase **"Where does AI earn its place?"** should run through the whole presentation, but it now has two meanings:
-
-1. **Where does AI earn a place inside the product?** Use it for ambiguity, interpretation, and useful variation. Keep deterministic logic for rules, timing, permissions, persistence, and anything that must be explainable.
-2. **Where does the AI building agent earn trust in the development process?** Give it bounded work, durable project memory, automated tests, browser evidence, and human review. When the process works, encode it as a skill or plugin so the next build starts stronger.
-
-This distinction makes NoteMaker especially important: it uses no runtime AI in the musical interaction, but it benefited enormously from AI-assisted building. AI did not earn a place in the instrument; it earned a place in the process that created the instrument.
+The development learnings appear once, as a chronological process timeline. The rest of the presentation focuses on product value, performance, architecture, operating economics, limitations, and future improvements.
 
 ---
 
-# Slide 00 - Opening
+# Slide 00 — Opening
 
-## Every app improved the next.
+## Specific software. Deliberate AI.
 
 ### Talking notes
 
-I started these applications because I wanted very specific things to exist. I wanted a browser-based duel experience that behaved consistently. I wanted to record food where I was actually handling it - next to the fridge, with a phone and a camera. I wanted free-form thoughts to become useful structures instead of disappearing into a notes list. I wanted to make music directly in the browser with the immediacy of a small hardware instrument.
+I built these applications because I wanted very specific tools to exist. They were not attempts to find a generic use for AI. Each started with a practical situation: playing through a complex rules system in a browser, managing food while standing next to a refrigerator, turning free-form thoughts into useful structures, and making music through a responsive browser instrument.
 
-At first, I thought the applications themselves were the main output. Over time, I realized that every application was also improving the system I used to build the next one.
+The common question was not “How can AI be added?” It was “What kind of intelligence does this particular experience need?”
 
-Duel Engine taught me how important project memory and automated code sanity are. FreshKeeper changed my default design process to mobile-first and PWA-ready. FlowWays forced me to build evidence-driven browser testing around difficult AI classifications. NoteMaker then demonstrated the compound effect: it was the fastest build even though it contained some of the most unfamiliar problems, including browser audio and a highly detailed interactive interface.
+Sometimes the answer was a model. Food images and unstructured language contain ambiguity that traditional interface logic does not resolve comfortably. In other situations, the answer was explicitly not a model. Card-game rules and musical timing require deterministic, immediate, explainable behavior.
 
-So the real story is not how many applications I built. It is how the building process learned.
+The second part of the story is operational. These are independently built applications, so they cannot require a large infrastructure team or constant attention. Their architecture uses static interfaces, PWAs, serverless functions, managed data services, selective model requests, Git history, and automated tests to remain relatively inexpensive and possible to revisit.
 
-### Ideas to personalize
+The presentation therefore covers four products, but its real subject is deliberate placement: placing intelligence where it adds value and keeping operational weight out of everything else.
 
-- Add the moment when you first realized you were reusing more than code - you were reusing decisions.
-- Add one sentence about why you prefer building specific tools instead of generic products.
+### Optional personal detail
+
+Add one short example of a very specific frustration that made you begin one of the applications. The strongest example is the one that would not normally justify buying or commissioning a commercial product.
 
 ---
 
-# Slide 01 - The premise
+# Slide 01 — The premise
 
-## The real product was the building system.
+## Intelligence is a product decision, not a feature checklist.
 
 ### Talking notes
 
-The common AI story is that a prompt can now produce an application. That is useful, but it is not the part that creates a durable product.
+Adding a model is easy to demonstrate. Designing a product that remains useful when the model is slow, uncertain, unavailable, or wrong is the real engineering problem.
 
-The harder work is maintaining continuity across hundreds of decisions. Why did the data model change? Which mobile layout failed? Which classification edge case caused a regression? Which deployment contains the stable behavior? Which part of the product should remain deterministic? What should the building agent remember before it makes the next change?
+I use five questions before deciding how intelligence belongs in an application.
 
-The leverage comes from owning that entire loop: identify a precise problem, choose the smallest architecture that can solve it, use an agent to accelerate bounded work, verify the result, release it, record what changed, and transform useful learning into a reusable process.
+First, what is the exact physical or behavioral context? FreshKeeper is used with a phone near the refrigerator. NoteMaker is used through rapid, tactile browser interaction. Those contexts immediately change the acceptable latency and interface design.
 
-That changes the role of the building agent. It is not an automatic product owner. It is a capable participant operating inside a system of memory, tests, evidence, and constraints.
+Second, what is the source of truth? Duel resolution, card zones, audio timing, quantities, permissions, and saved records cannot be probabilistic. They need deterministic application logic.
 
-The best outcome of a build is therefore not only the feature that shipped. It is also the new skill, test, checklist, plugin, architecture decision, or warning that makes the next build safer and faster.
+Third, where is uncertainty genuinely part of the problem? A food photograph may be incomplete. A free-form note may represent several possible structures. Those are appropriate places for model judgment.
 
-### Ideas to personalize
+Fourth, what happens while the model is working or if it fails? The primary interface should respond locally. Model work should be narrow, asynchronous, validated, and correctable.
 
-- Describe one early build where the agent moved quickly but you lost the reasoning behind the changes.
-- Add your definition of what should remain a human decision.
+Finally, what does it cost to keep the feature alive? Every external service adds operational responsibility. A useful AI feature must justify its latency, cost, security boundary, and maintenance burden.
+
+This framework keeps AI subordinate to product judgment.
 
 ---
 
-# Slide 02 - The applications as a learning sequence
+# Slide 02 — Product showcase
 
-## Four different problems. Four upgrades to the process.
+## Each application upgraded the process.
 
-## Duel Engine - project memory and code sanity
+The product showcase remains the interactive center of the presentation. Spend most of the application discussion here. Open only the products that are healthy and useful to demonstrate; the static previews already preserve the story when a live service is unavailable.
 
-### Talking notes
+## Duel Engine
 
-Duel Engine was the first application, and I entered it with more curiosity than planning. The domain became complex very quickly. A duel engine has cards moving through zones, turn phases, summons, attacks, effects, graveyards, deck rules, and many state transitions that must remain internally consistent.
+Duel Engine is a browser-based card duel system built around a complex deterministic rules domain. Cards move between zones, turns progress through phases, effects change state, and every outcome needs to be internally consistent.
 
-As the application changed, I started losing the story of the changes. I could see the current code, but not always the reason a decision had been made or what a previous update had repaired. This created the first major process improvement: the changelog.
+AI does not earn control over duel truth. A model-generated battle result would be difficult to reproduce, debug, or trust. The reducer and rules engine remain deterministic so state transitions can be explained and tested.
 
-The changelog became more than release notes. It became project memory. It allowed me to understand the sequence of decisions, and it gave the building agent a concise history of what had changed and why. Instead of rediscovering the project through the current source tree, the agent could use a narrative record of the product's evolution.
+AI can still support work around the core—such as implementation exploration, test generation, debugging assistance, or optional peripheral ideas—but the product remains fast because normal play does not wait for a model.
 
-Unit testing was the second survival mechanism. In a rule-heavy application, manually checking every interaction after every change is impossible. Tests created a stable definition of code sanity. Every functionality update could automatically run the relevant suite, allowing me to focus on the user and game narrative instead of repeatedly checking whether the underlying state engine still worked.
+This application also exposed the need for product memory. As the first and least planned build, it accumulated changes faster than their reasoning could be remembered. Changelogs made the evolution visible, and unit tests became the sanity boundary for every functional update.
 
-This is also the first example of **where AI does not earn a runtime role**. Duel resolution, phase transitions, and battle outcomes must be deterministic and explainable. AI can help build the reducer, generate test cases, inspect failures, or suggest deck ideas, but the rules engine itself should not improvise.
+If authentication is unavailable because the Supabase project is paused, say so directly. The static product preview still demonstrates the interface and deterministic product decision.
 
-### Learning promoted into the system
+## FreshKeeper
 
-- Maintain a human-readable changelog as product and agent memory.
-- Make unit tests part of every functionality update.
-- Keep rule resolution deterministic, even when AI assists the building process.
+FreshKeeper has a different physical context. It is intended to be used while holding a phone, taking a picture of food, recording freshness details, and noting where an item is stored.
 
-## FreshKeeper - mobile-first, PWA, and useful runtime AI
+That use case made mobile layout and installability essential rather than optional. A PWA offered an efficient middle path: the reach and update model of a website with an application-like presence on the phone.
 
-### Talking notes
+The product separates structured inventory from uncertain interpretation. Quantities, storage zones, shopping lists, and saved items remain conventional application data. AI earns its role when the input is ambiguous: recognizing food from an image, adding shelf-life context, interpreting a storage question, or suggesting meals from incomplete ingredients.
 
-FreshKeeper changed the physical context of the product. This was not an application I expected to use while sitting at a desk. I wanted to hold the phone near the fridge, take a picture of an item, record its freshness, and note where it was stored.
+The performance principle is important. Photographing or recording an item should feel immediate. Model interpretation can occur as a bounded follow-up, and the user must be able to confirm or correct the result.
 
-That use case changed the UI process. A mobile layout could no longer be a reduced desktop layout added at the end. It had to be planned from the beginning: touch targets, camera access, short input flows, navigation that works in one hand, and layouts that remain understandable on a narrow screen.
+## FlowWays
 
-The PWA became the simplest deployment answer. I could keep the reach and update model of a website while allowing the product to live on the phone like an application. After FreshKeeper, mobile layout planning and PWA readiness became default considerations rather than optional enhancements.
+FlowWays begins with free-form capture. A thought may describe a task, checklist, workflow, timeline, journal entry, or reminder. Traditional interfaces often require the user to choose the structure before they can record the idea.
 
-FreshKeeper also provides the clearest example of **where runtime AI earns its place**. The deterministic parts are straightforward: maintaining inventory, changing quantities, assigning storage zones, managing a shopping list, and showing a curated storage guide. The uncertain parts are different: identifying food from a photo, estimating shelf life from an item and storage location, interpreting a storage question, or creating meal ideas from incomplete ingredients.
+Here, AI earns a product role by proposing structure after the user expresses the thought naturally. The model provides judgment, but it does not own the contract. Structured schemas, validation, fallbacks, and user correction protect the workflow.
 
-Those uncertain moments benefit from OpenAI, but the AI boundary must remain controlled. Keys stay server-side. Responses should have constrained shapes. The application should preserve manual workflows and graceful fallbacks. AI earns its place because ambiguity is central to the task, not because the product needs an AI label.
+The difficulty was not producing a successful classification demonstration. It was handling overlapping categories and inconsistent real-world inputs. That led to Playwright smoke scenarios, screenshots, and traces that could show exactly how a classification behaved in the browser.
 
-### Learning promoted into the system
+The longer-term goal is a closed loop: preserve a failure as evidence, create an issue from that evidence, repair the behavior, and retain the scenario as a regression test.
 
-- Plan the mobile layout at the same time as the desktop interface.
-- Add PWA behavior when handheld, installable use improves the product.
-- Put runtime AI at moments of ambiguity while preserving manual and deterministic paths.
+## NoteMaker
 
-## FlowWays - classification evidence and closed-loop smoke testing
+NoteMaker is a useful counterexample to the idea that every application needs runtime AI. Musical timing, sequencing, playback state, and tactile controls demand precision and low latency. These stay in browser logic and Web Audio rather than being delegated to a model.
 
-### Talking notes
+Its AI story is primarily in the building process. NoteMaker was the fastest build despite including unfamiliar audio behavior and a highly detailed hardware-inspired interface. Earlier decisions had already been turned into skills, tests, deployment practices, plugins, and personas.
 
-FlowWays introduced a different form of uncertainty. A free-form thought could represent a task, checklist, workflow, journal entry, timeline, or reminder. Classification looked simple in a successful demonstration, but real inputs produced overlapping categories, inconsistent structures, and edge cases that were difficult to reason about one at a time.
+This distinction is valuable: AI did not earn a place in the instrument’s timing loop, but an AI building agent earned a substantial role in exploring, implementing, debugging, testing, and refining the instrument.
 
-The excessive number of classification combinations made manual checking a serious bottleneck. Unit tests were still necessary, but they were not enough. I needed to see what the user would see across many complete scenarios.
+### Transition
 
-That led to Playwright smoke testing. The browser could exercise representative captures, record what appeared, and preserve screenshots and traces as evidence. Instead of reporting only that a classification was wrong, the process could gather the input, the selected structure, the visible output, and the surrounding state.
-
-The next step was closing the loop. Evidence from the smoke run could be used to create a precise issue, give the agent a reproducible case, implement the correction, and rerun the same scenario as a regression test. The sequence became: reproduce, capture evidence, create the issue, repair, verify, and retain the test.
-
-FlowWays also sharpened the runtime AI boundary. The model can propose a classification, but Zod validates the structure, fallback logic protects the capture flow, and the user retains ownership of the result. The model supplies judgment; the application owns the contract.
-
-### Learning promoted into the system
-
-- Use Playwright smoke flows when correctness depends on complete user scenarios.
-- Preserve screenshots, traces, and inputs as evidence rather than relying on a vague failure report.
-- Turn every repaired scenario into a retained regression test.
-- Validate model output and keep deterministic fallback classification available.
-
-## NoteMaker - compounding speed across the most unknown territory
-
-### Talking notes
-
-NoteMaker was the fastest build, but it contained some of the most unfamiliar work. Music was being managed directly in the browser through Web Audio. The interface needed precise state, immediate feedback, detailed controls, sequencing, timing, and a polished hardware-like feel.
-
-The speed did not come from the problem being easy. It came from not beginning at zero.
-
-Changelogs and release history were already normal. Unit testing was already part of feature work. Mobile behavior and PWA decisions already had a reusable approach. Playwright could inspect the actual interface. Git, Vercel, Supabase, and browser-testing plugins were already available to the building process. Personas could be used to explore the product from the perspective of a musician, a first-time user, or a product designer before committing to an interaction.
-
-Prior learning had been converted into skills. Those skills gave the agent repeatable instructions for document creation, testing, visual inspection, deployment, and change management. Plugins gave the agent controlled access to the surrounding platforms. Personas gave it sharper product questions. This reduced the amount of process invention happening at the same time as product invention.
-
-NoteMaker is the strongest demonstration of the two roles for AI. **AI did not earn a runtime place in audio timing, sequencing, or direct musical control.** Those interactions need precision and immediacy. But the AI building agent earned a major place in exploration, implementation, testing, UI refinement, and delivery because it was operating inside a mature process created by the earlier applications.
-
-### Learning demonstrated by the build
-
-- Reusable skills turn previous decisions into a stronger starting point.
-- Plugins reduce friction around Git, Vercel, Supabase, and Playwright.
-- Personas improve product exploration before code is committed.
-- Compounding process maturity can make the build with the most unknowns the fastest build.
+The four applications do not use the same AI architecture because they do not have the same product problem. The next slide extracts the shared decision rule.
 
 ---
 
-# Slide 03 - The system that builds the next app
+# Slide 03 — Where AI earns its place
 
-## Every difficulty should leave behind a reusable capability.
-
-### Talking notes
-
-The repeatable architecture is not only the architecture of the application. It is also the architecture of the building process.
-
-The process needs **product memory**: changelogs, release history, decisions, and clear documentation. It needs **experience defaults**: mobile-first layouts, PWA readiness, accessibility, and responsive behavior. It needs **verification evidence**: unit tests, browser smoke tests, screenshots, traces, and reproducible scenarios. It needs an **AI boundary**: a clear definition of what the runtime model may decide, what the building agent may change, and which outputs require validation or human approval. Finally, it needs **delivery connectors**: Git, Vercel, Supabase, Playwright, and other plugins that allow the process to inspect and operate the real environment.
-
-When a build exposes a recurring weakness, the goal is to promote the repair into this system. If the repair remains only inside one codebase, the next application will pay for the same lesson again.
-
-This is how the process compounds: friction becomes evidence; evidence becomes a decision; the decision becomes a test, skill, plugin, or architecture default; and the next application begins with that capability already available.
-
-### Ideas to personalize
-
-- Add one specific skill you created from a repeated problem.
-- Add an example where a plugin eliminated a manual platform step.
-
----
-
-# Slide 04 - Where does AI earn its place?
-
-## Ask the question twice: once for the product and once for the process.
+## Use models for interpretation—not for truth.
 
 ### Talking notes
 
-The original question - "Where does AI earn its place?" - remains the center of the story, but it should be applied at two layers.
+The decision map separates predictable truth from ambiguous input.
 
-## Inside the product
+Duel resolution belongs on the predictable side. The same state and action should always produce the same result. Musical timing also belongs there because the interaction requires precision and immediate feedback.
 
-AI earns a runtime role when ambiguity or useful variation is part of the user problem. FreshKeeper needs interpretation for images, shelf-life context, questions, and meal options. FlowWays benefits from judgment when translating free-form language into a possible structure.
+Food interpretation belongs on the ambiguous side. A photograph, storage environment, and freshness description may be incomplete. Free-form capture also belongs there because the same sentence may support several useful structures.
 
-AI does not earn control over deterministic truth. Duel resolution, audio timing, permissions, persistence rules, validation, and data ownership need predictable software. Even when a model proposes an answer, the application must own the schema, security boundary, fallback, and user override.
+Using a model introduces a performance contract.
 
-## Inside the building process
+The application responds locally first. Opening a panel, recording an item, saving a draft, or interacting with an instrument should not wait for a remote model.
 
-The building agent earns more autonomy when the work is bounded and the feedback is strong. A changelog gives it memory. Tests give it invariants. Playwright gives it visible evidence. Git gives it reversible history. Preview deployments give it a realistic environment. A skill gives it repeatable instructions. A plugin gives it controlled access to a platform. A persona gives it a more focused perspective for exploring an idea.
+The request is narrow. The model receives the decision that genuinely needs interpretation rather than becoming the application runtime.
 
-The agent should receive less trust when the task has unclear intent, missing evidence, irreversible impact, or a product decision that has not been made. The goal is not maximum autonomy. The goal is useful autonomy supported by a system that can detect and recover from mistakes.
+The result is validated. The application owns the schema, security boundary, fallback, and correction path. A model output is a proposal entering a deterministic system.
 
-## A simple decision framework
-
-1. Is the problem ambiguous, or does it have a deterministic truth?
-2. What happens when the AI answer is wrong?
-3. Can the output be constrained, validated, or reversed?
-4. What evidence will tell the agent whether the change worked?
-5. If the process succeeds repeatedly, should it become a skill, test, plugin, or default architecture?
-
-This framework connects product AI, building-agent AI, testing, cost, and human responsibility in one idea.
+The simple test is: if the model response is late or imperfect, does the application remain understandable and recoverable? If not, AI has been placed too close to the product’s source of truth.
 
 ---
 
-# Slide 05 - The learning flywheel
+# Slide 04 — Architecture and performance
 
-## Build, observe, preserve, and compound.
+## Keep the experience close. Call the network with intent.
 
 ### Talking notes
 
-The development loop is no longer only frame, build, test, and release. It includes an explicit promotion step for learning.
+The architecture follows the product decision.
 
-First, frame a specific use case and build the smallest useful version. Then observe where the work becomes confusing, repetitive, fragile, or expensive. Preserve that friction as evidence: a changelog entry, failing test, browser trace, screenshot, issue, or deployment observation. Repair the problem and verify the behavior. Finally, encode the successful process into something reusable.
+The browser or PWA contains the interface and deterministic application core. Responsive layouts, local interaction state, rules, validation, and audio behavior stay close to the user. This is the fast path.
 
-That reusable output may be a unit-test rule, a Playwright smoke flow, a mobile layout checklist, a PWA pattern, a prompt boundary, a persona, a skill, or a plugin connection.
+A server boundary is used when a request needs protected credentials, model access, or durable shared services. Vercel functions keep OpenAI credentials out of the browser and provide a place to constrain and shape model requests.
 
-The next build then starts with a larger pool of trusted capabilities. The agent spends less time rediscovering workflow and more time engaging with the unique product problem.
+OpenAI is called for interpretation. Its latency and usage cost are variable, so the request should be selective and meaningful.
 
-The important metric is not simply how quickly one feature was generated. It is how much stronger the next build becomes because this build happened.
+Supabase provides durable truth: authentication, Postgres data, and row-level policies where the application needs shared or synchronized state.
 
-### Ideas to personalize
+This separation affects perceived performance. Most interaction remains local and immediate. Network latency is introduced only where persistence or interpretation creates enough value to justify it.
 
-- Identify one learning that remains trapped inside a single project and should become a reusable skill.
-- Add how you decide that a process is stable enough to promote into the shared system.
+It also affects resilience. A temporary model problem should reduce an enhancement, not collapse the whole interface. Manual entry, saved local state, validation messages, or editable results provide recovery paths.
+
+Avoid claiming that every application implements every layer identically. This is the shared architectural pattern and decision logic, not a statement that all four codebases have the same stack.
 
 ---
 
-# Slide 06 - Evidence of compounding
+# Slide 05 — How the process evolved
 
-## The portfolio is also a timeline of process maturity.
+## Each hard problem left one reusable advantage.
 
 ### Talking notes
 
-The evidence of craft is visible in what each application added to the common system.
+This is the only slide that retells the applications as a chronological development sequence.
 
-- **Duel Engine:** changelog-driven product memory and unit-test discipline for a complex deterministic core.
-- **FreshKeeper:** mobile-first interface planning, PWA delivery, and a clearer rule for where runtime AI handles ambiguity.
-- **FlowWays:** Playwright smoke scenarios, visual evidence, issue creation, and closed-loop regression testing for classification behavior.
-- **NoteMaker:** the compound result - the fastest build across unfamiliar browser audio and detailed UI work, supported by reusable skills, plugins, tests, and personas.
+Duel Engine created the need for product memory and unit-test sanity. Changelogs made the story of changes visible, while unit tests protected the deterministic core.
 
-This sequence is more meaningful than a list of technologies because it explains why the later process is different from the earlier process.
+FreshKeeper changed the interface-planning default. Mobile layout, camera use, responsive behavior, and PWA delivery were considered from the beginning. Later projects inherited mobile planning rather than treating it as a retrofit.
 
-It also keeps the story honest. Not every capability was planned from the beginning. Many were responses to pain: losing history, manually checking too much behavior, designing mobile too late, or struggling to explain classification failures. Professional process emerged by converting those pains into durable infrastructure for the next decision.
+FlowWays made browser evidence essential. Unit tests were still necessary, but they could not explain the complete interaction or show a classification error in context. Playwright added scenarios, screenshots, traces, and a path from observed failure to retained regression coverage.
+
+NoteMaker demonstrated reuse. Git, Vercel, Supabase, Playwright, skills, plugins, and product personas reduced the amount of process that had to be rediscovered. That allowed more attention to go toward audio behavior and interface quality.
+
+The important principle is promotion: when a solution works repeatedly, it should become a default, test, skill, plugin, checklist, or architecture rule. Otherwise the learning remains trapped in one conversation or one codebase.
 
 ---
 
-# Slide 07 - Lean economics and low tether
+# Slide 06 — Low-tether economics
 
-## A reusable process reduces both platform cost and decision cost.
+## Low tether by design.
 
 ### Talking notes
 
-Low cost is partly an application architecture decision: static interfaces, local-first state, serverless functions, managed data, and selective model calls reduce idle infrastructure.
+Low tether does not simply mean low hosting cost. It means reducing three kinds of weight: idle infrastructure, ongoing administration, and the effort required to understand an older application again.
 
-But there is another cost that matters for a small product team: the cost of repeatedly making the same decisions. Every time mobile layout, test setup, release management, environment configuration, or browser verification must be rediscovered, the application pays a process tax.
+Static interfaces and PWAs keep the product shell inexpensive to serve and responsive to open. There is little reason to run dedicated compute continuously for these use cases.
 
-Skills, templates, plugins, changelogs, and regression tests reduce that tax. They make small applications economically reasonable not only because hosting is inexpensive, but because maintaining and changing them requires less cognitive setup.
+Functions and model requests are invoked on demand. Compute and token usage occur when an interaction needs server-side work or interpretation. Selective AI is therefore both a product decision and a cost-control mechanism.
 
-The free tiers also create honest tradeoffs. Supabase may limit how many projects remain active. A paused authentication service can affect a live demonstration even when the interface is still deployed. That constraint belongs in the architecture conversation: decide which products truly require cloud state, preserve local or guest paths where appropriate, and understand the real cost of keeping each service alive.
+Vercel and Supabase provide managed foundations. They remove server patching, custom authentication infrastructure, manual database hosting, and much of the deployment ceremony. That exchanges some control and portability for lower administration.
 
-The goal is not "free software." The goal is low tether: low idle cost, low operational ceremony, and enough process memory that the application can be revived without rediscovering its entire history.
+Git history, changelogs, tests, and deployment records reduce revival cost. An older application is expensive when nobody remembers its environment, data service, last stable behavior, or reason for a particular design. Process memory makes dormant products less fragile.
+
+The operating equation is: less always-on infrastructure, selective intelligence, and managed operations produce a low-tether application. It does not produce a maintenance-free application.
 
 ---
 
-# Slide 08 - Closing
+# Slide 07 — Limits and tradeoffs
 
-## The process should become more capable every time it builds.
+## Low tether is a tradeoff, not an absence of limits.
 
 ### Talking notes
 
-The distance between "I wish this existed" and "I use this" is getting shorter. But the more important change is that the distance should become shorter with every application, because the building system has learned.
+The most credible version of this story includes the failure modes.
 
-One application leaves behind project memory. Another leaves behind mobile and PWA defaults. Another leaves behind evidence-driven browser tests. Another proves that the combined system can move quickly through unfamiliar territory.
+The first constraint is free-tier capacity. Supabase currently limits how many projects can remain active, which can leave authentication or data unavailable for a product such as Duel Engine. Low cost can therefore reduce demo reliability.
 
-The opportunity is not simply to generate more software. It is to create a building process that knows where AI earns its place, preserves what it learns, and becomes more reliable with every product it touches.
+The response should be an application health manifest and revival runbook. For each product, record the deployment URL, repository, database project, authentication state, required environment variables, last verification date, and exact recovery steps.
 
-**Possible final line:** Every app should solve a problem. It should also make the next app easier to build well.
+The second constraint is model latency and variance. Model calls are slower and less predictable than local logic. The response is an asynchronous interface, structured validation, fallbacks, and user correction.
+
+The third constraint is managed-service coupling. Vercel, Supabase, and OpenAI remove substantial operational work, but the applications inherit their quotas, APIs, policy changes, and availability. Data exports, documented service boundaries, and replaceable adapters reduce that risk.
+
+The fourth constraint is the live presentation itself. Authentication, network access, frame policies, or a paused backend can interrupt an embedded demonstration. Every product should have a three-level presentation path: live application, short recorded interaction, and the existing static product preview.
+
+The goal is not to hide these constraints. It is to show that the architecture includes an explicit response to them.
 
 ---
 
-# Questions to resolve before the final presentation update
+# Slide 08 — What improves next
 
-- Which application should be the primary live demonstration?
-- Do you want the chronology to use actual project dates, or keep the sequence conceptual?
-- Which specific skills were created and reused across projects? Name them if they are safe to show.
-- Which plugins and personas had the greatest practical impact during NoteMaker?
-- Can the smoke-test-to-issue workflow be demonstrated with a real example from FlowWays?
-- Are there verified build durations, release counts, test counts, or cost figures that support the compounding-speed claim?
-- Which Supabase projects will be active on presentation day, and which demos need local or static fallbacks?
+## Move from repeatable to measurable.
+
+### Talking notes
+
+The current process is increasingly repeatable. The next stage is making its health and performance visible.
+
+The immediate improvement is operational clarity. Create an application health manifest, a revival runbook, and a verified demo fallback for every product. This directly addresses the difficulty of returning to projects built at different times.
+
+The next improvement is quality budgeting. FreshKeeper and FlowWays should have golden AI cases: representative inputs with expected acceptable structures and unacceptable failure modes. Model changes can then be evaluated against retained product behavior.
+
+Latency and token budgets make the cost of intelligence explicit. A feature should have an expected response-time range, maximum useful request size, fallback behavior, and a reason its model cost is justified.
+
+Preview deployment gates can connect the existing tools. A change creates a Vercel preview, runs unit tests and Playwright smoke scenarios, records evidence, and blocks promotion when important behavior fails.
+
+The later improvement is a reusable platform for the building process. Skills and personas should be versioned and connected to the projects that validated them. Shared observability should expose application health without requiring every product to be opened manually. The Supabase strategy should also become deliberate: consolidate with strong isolation, rotate active projects with a documented process, or pay for reliability when the value justifies it.
+
+The objective is not a large internal platform. It is the smallest system that makes product health, AI quality, operating cost, and reusable learning visible.
+
+---
+
+# Slide 09 — Closing
+
+## AI should increase usefulness without increasing weight.
+
+### Talking notes
+
+The opportunity is not to build the greatest possible number of applications or attach AI to every interaction.
+
+It is now practical for an individual builder to create software for use cases that are too specific for conventional product economics. That creates a new responsibility: the intelligence, architecture, and operating model need to be chosen deliberately.
+
+AI earns its place where interpretation or useful variation improves the user’s outcome. Deterministic software preserves truth, timing, security, and explainability. Lean architecture keeps the product affordable to host and possible to revisit. Tests, evidence, changelogs, skills, and plugins keep the development process from starting at zero.
+
+The final idea is simple:
+
+**Specific problem. Deliberate intelligence. Sustainable software.**
+
+---
+
+# Details to personalize before presenting
+
+- One concrete example of a FreshKeeper model response that saved user effort.
+- One FlowWays classification failure that became a Playwright scenario.
+- The approximate build-time difference between NoteMaker and the earlier applications.
+- Which skills, plugins, or personas produced the most measurable improvement.
+- Whether the Supabase strategy will be project rotation, consolidation, or a paid reliability tier.
+- A confirmed demo status for every application on the day of the presentation.
