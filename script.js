@@ -17,6 +17,8 @@ const notesText = document.getElementById('notesText');
 const notesPanel = document.getElementById('speakerNotes');
 const notesToggle = document.getElementById('notesToggle');
 const dots = document.getElementById('slideDots');
+const previousSlideButton = document.getElementById('previousSlide');
+const nextSlideButton = document.getElementById('nextSlide');
 let activeSlide = 0;
 
 slides.forEach((slide, index) => {
@@ -36,7 +38,14 @@ function setActiveSlide(index) {
   sectionIndex.textContent = String(index + 1).padStart(2, '0');
   sectionName.textContent = slide.dataset.title;
   notesText.textContent = slide.dataset.notes || '';
-  dotButtons.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+  dotButtons.forEach((dot, i) => {
+    const isCurrent = i === index;
+    dot.classList.toggle('is-active', isCurrent);
+    if (isCurrent) dot.setAttribute('aria-current', 'step');
+    else dot.removeAttribute('aria-current');
+  });
+  previousSlideButton.disabled = index === 0;
+  nextSlideButton.disabled = index === slides.length - 1;
 }
 
 function goToSlide(index) {
@@ -58,8 +67,8 @@ const slideObserver = new IntersectionObserver((entries) => {
 slides.forEach((slide) => slideObserver.observe(slide));
 setActiveSlide(0);
 
-document.getElementById('previousSlide').addEventListener('click', () => goToSlide(activeSlide - 1));
-document.getElementById('nextSlide').addEventListener('click', () => goToSlide(activeSlide + 1));
+previousSlideButton.addEventListener('click', () => goToSlide(activeSlide - 1));
+nextSlideButton.addEventListener('click', () => goToSlide(activeSlide + 1));
 document.querySelectorAll('[data-goto]').forEach((button) => button.addEventListener('click', () => {
   if (document.getElementById('demoDialog')?.open) return;
   document.getElementById(button.dataset.goto)?.scrollIntoView({ behavior: 'smooth' });
